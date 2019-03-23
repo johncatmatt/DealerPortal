@@ -78,6 +78,13 @@ extension VCPayment: UITextFieldDelegate{
         
         return replacementText.isValidDouble(maxDecimalPlaces: 2)
     }
+    
+    //exit the textbox when the user clicks return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }
 
 extension String{

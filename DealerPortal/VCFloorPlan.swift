@@ -174,7 +174,7 @@ class VCFloorPlan: UIViewController, NSURLConnectionDelegate, XMLParserDelegate 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toVehicles"{
-            let vc = segue.destination as! VCVehicles
+            let vc = segue.destination as! OLDVCVehicles
             //Dealer will be set here
             vc.dealer = dealer
             vc.TableDealsArray = createArray()

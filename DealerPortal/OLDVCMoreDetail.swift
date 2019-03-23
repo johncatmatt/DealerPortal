@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VCMoreDetail: UIViewController {
+class OLDVCMoreDetail: UIViewController {
 
     //outlets
     @IBOutlet weak var tableView: UITableView!
@@ -41,7 +41,7 @@ class VCMoreDetail: UIViewController {
 }
 
 //tableview extension
-extension VCMoreDetail: UITableViewDelegate, UITableViewDataSource{
+extension OLDVCMoreDetail: UITableViewDelegate, UITableViewDataSource{
     
     //number of rows in the table (Will be a constant amount)
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

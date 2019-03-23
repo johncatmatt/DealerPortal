@@ -15,12 +15,16 @@ class VehicleCell: UITableViewCell {
     @IBOutlet weak var yrmakemod: UILabel!
     @IBOutlet weak var curpay: UILabel!
     @IBOutlet weak var curtailduenet: UILabel!
-
-    
+    @IBOutlet weak var btnTitle: UIButton!
+    //var CellTitle: String = ""
+    var vdata: VehicleData = VehicleData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "")
+    //var v: VCNewVehList = nil
     
     func setVehicles(v: VehicleData){
         
-        if v.VIN.contains("INVALID"){
+        vdata = v
+        
+        if v.VIN.contains("No Data Recieved"){
              vin.text = "\(v.VIN)"
             yrmakemod.text = ""
             curpay.text = ""
@@ -31,6 +35,27 @@ class VehicleCell: UITableViewCell {
             curpay.text = "CurtailPayment: $\(v.curpay)"
             curtailduenet.text = "Curtailduenet: $\(v.curtailduenet)"
         }
+       // CellTitle = v.title
+        
+        if vdata.title == ""{
+            btnTitle.isHidden = true
+        }else{
+            btnTitle.isHidden = false
+           // btnTitle.titleLabel?.text =  "title: \(vdata.title)"
+        }
     
     }
+    
+    
+    @IBAction func ShowTitle(_ sender: Any) {
+        //print("The title is " + CellTitle)
+        
+        
+       // let vc = VCNewVehList.self
+        
+       // vc.ToTitle(VCNewVehList)
+        
+    }
+    
+    
 }

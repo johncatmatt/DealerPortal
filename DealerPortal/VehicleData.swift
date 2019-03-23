@@ -14,8 +14,10 @@ class VehicleData {
     var YrMakeMod: String
     var curpay: String
     var curtailduenet: String
+    var title: String
+
     
-    init(VIN: String, YrMakeMod: String, curpayoff: String, curtailduenet: String) {
+    init(VIN: String, YrMakeMod: String, curpayoff: String, curtailduenet: String, title: String) {
         
         if (VIN != "" && YrMakeMod != "" && curpayoff != "" && curtailduenet != ""){
         
@@ -28,11 +30,14 @@ class VehicleData {
         let tempcurtailduenet = Double (curtailduenet)
         self.curtailduenet =  String(format: "%.2f", tempcurtailduenet ?? "00000.00000 (UnkonwnError)")
             
+        self.title = title
+            
         }else{
-            self.VIN = "INVALID DEALER #"
+            self.VIN = "No Data Recieved"
             self.curpay = ""
             self.YrMakeMod = ""
             self.curtailduenet = ""
+            self.title = ""
         }
     }
 

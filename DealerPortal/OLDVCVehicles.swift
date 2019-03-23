@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VCVehicles: UIViewController {
+class OLDVCVehicles: UIViewController {
     //outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -45,7 +45,7 @@ class VCVehicles: UIViewController {
 
 
 /*-----------All of the functionality for the tableview-----------*/
-extension VCVehicles: UITableViewDelegate, UITableViewDataSource {
+extension OLDVCVehicles: UITableViewDelegate, UITableViewDataSource {
     
     //get the number of row in each section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,7 +97,7 @@ extension VCVehicles: UITableViewDelegate, UITableViewDataSource {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "more"{
             //sets the more page with the deals data
-            let vc = segue.destination as! VCMoreDetail
+            let vc = segue.destination as! OLDVCMoreDetail
             let a = currentArray[currentIndex]
             //Moves the payment method over to the more page
             vc.curtailPayoffOther = paymentMethod
@@ -109,7 +109,7 @@ extension VCVehicles: UITableViewDelegate, UITableViewDataSource {
 }
 
 //Searchbar functionality
-extension VCVehicles: UISearchBarDelegate{
+extension OLDVCVehicles: UISearchBarDelegate{
     //handles the scope of the radio buttons under the search bar
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         

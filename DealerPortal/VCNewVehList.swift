@@ -12,6 +12,8 @@ class VCNewVehList: UIViewController {
 
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var SearchBar: UISearchBar!
+  
+    @IBOutlet weak var titleButton: UIButton!
     
     var dealerNo: String = ""
     var paymentMethod: String = ""
@@ -23,6 +25,8 @@ class VCNewVehList: UIViewController {
     var SearchArray: [VehicleData] = []
     var currentArray: [VehicleData] = []
     
+    var buttonIndex = 9999
+    
     struct DealerVehicleList: Decodable {
         let vl: [veh]
     }
@@ -31,6 +35,7 @@ class VCNewVehList: UIViewController {
         var Vin : String
         var curpayoff : String
         var curtailduenet : String
+        var tit_Number : String
     }
     
     
@@ -80,12 +85,12 @@ class VCNewVehList: UIViewController {
                 
                 DispatchQueue.main.async {
                     for v in myVehList.vl{
-                        let myVeh = VehicleData(VIN: v.Vin, YrMakeMod: v.YrMakeMod, curpayoff: v.curpayoff, curtailduenet: v.curtailduenet)
+                        let myVeh = VehicleData(VIN: v.Vin, YrMakeMod: v.YrMakeMod, curpayoff: v.curpayoff, curtailduenet: v.curtailduenet, title: v.tit_Number)
                         tempArray.append(myVeh)
                     }
                 
                    if myVehList.vl.isEmpty{
-                    tempArray = [VehicleData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "")]
+                    tempArray = [VehicleData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "")]
                     }
                     self.TableVehiclesArray = tempArray
                     self.currentArray = tempArray
@@ -100,8 +105,12 @@ class VCNewVehList: UIViewController {
         task.resume()
     }
     
+    @IBAction func ToTitle(_ sender: Any) {
+        buttonIndex = (sender as AnyObject).tag
+        performSegue(withIdentifier: "ViewTitle", sender: self)
+    }
     
-    
+ 
     
 }
 
@@ -110,7 +119,7 @@ class VCNewVehList: UIViewController {
 extension VCNewVehList: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150.0;
+        return 190.0;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -124,7 +133,9 @@ extension VCNewVehList: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleCell") as! VehicleCell
         cell.setVehicles(v: vh)
+        cell.btnTitle.tag = indexPath.row
   
+        
         return cell
         
     }
@@ -134,7 +145,7 @@ extension VCNewVehList: UITableViewDelegate, UITableViewDataSource {
         //gets the index of the selected row and performs the segue
         currentIndex = indexPath.row
         
-        if currentArray[currentIndex].VIN != "INVALID DEALER #"{
+        if currentArray[currentIndex].VIN != "No Data Recieved"{
         
         let msgPM = UIAlertController(title: "Payment", message: "Choose Payment Option", preferredStyle: UIAlertController.Style.alert)
         msgPM.addAction(UIAlertAction(title: "Curtail Pament", style: .default, handler: { (action: UIAlertAction!) in
@@ -160,6 +171,10 @@ extension VCNewVehList: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+   /* func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        print(currentArray[currentIndex].title)
+    }*/
+    
     //prepares for the segue to the moredetail page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "MakePayment"{
@@ -168,6 +183,11 @@ extension VCNewVehList: UITableViewDelegate, UITableViewDataSource {
             let a = currentArray[currentIndex]
             vc.deal = a
             vc.paymentMethod = paymentMethod
+        }else if segue.identifier == "ViewTitle"{
+            let vcT = segue.destination as! VCTitle
+            //print(buttonIndex)
+            vcT.vin = currentArray[buttonIndex].VIN
+            
         }
     }
 
