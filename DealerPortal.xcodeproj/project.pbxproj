@@ -8,20 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		2D41A79921D3CEE300BFE874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41A79821D3CEE300BFE874 /* AppDelegate.swift */; };
-		2D41A79B21D3CEE300BFE874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41A79A21D3CEE300BFE874 /* ViewController.swift */; };
+		2D41A79B21D3CEE300BFE874 /* VCVehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41A79A21D3CEE300BFE874 /* VCVehicles.swift */; };
 		2D41A79E21D3CEE300BFE874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D41A79C21D3CEE300BFE874 /* Main.storyboard */; };
 		2D41A7A021D3CEEE00BFE874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D41A79F21D3CEEE00BFE874 /* Assets.xcassets */; };
 		2D41A7A321D3CEEE00BFE874 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D41A7A121D3CEEE00BFE874 /* LaunchScreen.storyboard */; };
+		2D41A7CB21D3D75200BFE874 /* DealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41A7CA21D3D75200BFE874 /* DealCell.swift */; };
+		2D41A7CD21D3D95100BFE874 /* DealerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41A7CC21D3D95100BFE874 /* DealerData.swift */; };
+		2D41A7CF21D4242800BFE874 /* VCMoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41A7CE21D4242800BFE874 /* VCMoreDetail.swift */; };
+		2DF1799F2231BCCC00181165 /* VCNewVehList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1799E2231BCCC00181165 /* VCNewVehList.swift */; };
+		2DF179A32231C1EE00181165 /* VehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF179A22231C1EE00181165 /* VehicleCell.swift */; };
+		2DF179A52231C5A100181165 /* VehicleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF179A42231C5A100181165 /* VehicleData.swift */; };
+		2DF294D421D6BEE90094F0FE /* VCFloorPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF294D321D6BEE90094F0FE /* VCFloorPlan.swift */; };
+		2DF952D4223BDCF10072C2C6 /* VCPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF952D3223BDCF10072C2C6 /* VCPayment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D41A79521D3CEE300BFE874 /* DealerPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealerPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D41A79821D3CEE300BFE874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2D41A79A21D3CEE300BFE874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2D41A79A21D3CEE300BFE874 /* VCVehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCVehicles.swift; sourceTree = "<group>"; };
 		2D41A79D21D3CEE300BFE874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D41A79F21D3CEEE00BFE874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D41A7A221D3CEEE00BFE874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D41A7A421D3CEEE00BFE874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D41A7CA21D3D75200BFE874 /* DealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCell.swift; sourceTree = "<group>"; };
+		2D41A7CC21D3D95100BFE874 /* DealerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerData.swift; sourceTree = "<group>"; };
+		2D41A7CE21D4242800BFE874 /* VCMoreDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMoreDetail.swift; sourceTree = "<group>"; };
+		2DF1799E2231BCCC00181165 /* VCNewVehList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCNewVehList.swift; sourceTree = "<group>"; };
+		2DF179A22231C1EE00181165 /* VehicleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCell.swift; sourceTree = "<group>"; };
+		2DF179A42231C5A100181165 /* VehicleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleData.swift; sourceTree = "<group>"; };
+		2DF294D321D6BEE90094F0FE /* VCFloorPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCFloorPlan.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		2DF952D3223BDCF10072C2C6 /* VCPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPayment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +71,19 @@
 			isa = PBXGroup;
 			children = (
 				2D41A79821D3CEE300BFE874 /* AppDelegate.swift */,
-				2D41A79A21D3CEE300BFE874 /* ViewController.swift */,
+				2DF294D321D6BEE90094F0FE /* VCFloorPlan.swift */,
+				2D41A79A21D3CEE300BFE874 /* VCVehicles.swift */,
+				2D41A7CE21D4242800BFE874 /* VCMoreDetail.swift */,
+				2DF1799E2231BCCC00181165 /* VCNewVehList.swift */,
 				2D41A79C21D3CEE300BFE874 /* Main.storyboard */,
 				2D41A79F21D3CEEE00BFE874 /* Assets.xcassets */,
 				2D41A7A121D3CEEE00BFE874 /* LaunchScreen.storyboard */,
 				2D41A7A421D3CEEE00BFE874 /* Info.plist */,
+				2DF179A22231C1EE00181165 /* VehicleCell.swift */,
+				2DF179A42231C5A100181165 /* VehicleData.swift */,
+				2D41A7CA21D3D75200BFE874 /* DealCell.swift */,
+				2D41A7CC21D3D95100BFE874 /* DealerData.swift */,
+				2DF952D3223BDCF10072C2C6 /* VCPayment.swift */,
 			);
 			path = DealerPortal;
 			sourceTree = "<group>";
@@ -135,7 +159,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D41A79B21D3CEE300BFE874 /* ViewController.swift in Sources */,
+				2D41A7CB21D3D75200BFE874 /* DealCell.swift in Sources */,
+				2D41A79B21D3CEE300BFE874 /* VCVehicles.swift in Sources */,
+				2DF179A52231C5A100181165 /* VehicleData.swift in Sources */,
+				2D41A7CF21D4242800BFE874 /* VCMoreDetail.swift in Sources */,
+				2DF294D421D6BEE90094F0FE /* VCFloorPlan.swift in Sources */,
+				2DF179A32231C1EE00181165 /* VehicleCell.swift in Sources */,
+				2DF1799F2231BCCC00181165 /* VCNewVehList.swift in Sources */,
+				2DF952D4223BDCF10072C2C6 /* VCPayment.swift in Sources */,
+				2D41A7CD21D3D95100BFE874 /* DealerData.swift in Sources */,
 				2D41A79921D3CEE300BFE874 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
