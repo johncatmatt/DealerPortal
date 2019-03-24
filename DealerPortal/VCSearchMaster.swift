@@ -120,7 +120,7 @@ class VCSearchMaster: UIViewController {
 extension VCSearchMaster: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190.0;
+        return 40.0;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -134,7 +134,7 @@ extension VCSearchMaster: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchMasterCell") as! SearchMasterCell
         cell.setSearchMaster(v: vh)
-        cell.btndealerNo.tag = indexPath.row
+      //  cell.btndealerNo.tag = indexPath.row
         
         
         return cell
