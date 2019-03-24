@@ -15,6 +15,9 @@ class VehicleCell: UITableViewCell {
     @IBOutlet weak var yrmakemod: UILabel!
     @IBOutlet weak var curpay: UILabel!
     @IBOutlet weak var curtailduenet: UILabel!
+    
+    
+    @IBOutlet weak var btnPay: UIButton!
     @IBOutlet weak var btnTitle: UIButton!
     //var CellTitle: String = ""
     var vdata: VehicleData = VehicleData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "")
@@ -25,7 +28,7 @@ class VehicleCell: UITableViewCell {
         vdata = v
         
         if v.VIN.contains("No Data Recieved"){
-             vin.text = "\(v.VIN)"
+            vin.text = "\(v.VIN)"
             yrmakemod.text = ""
             curpay.text = ""
             curtailduenet.text = ""
@@ -44,17 +47,6 @@ class VehicleCell: UITableViewCell {
            // btnTitle.titleLabel?.text =  "title: \(vdata.title)"
         }
     
-    }
-    
-    
-    @IBAction func ShowTitle(_ sender: Any) {
-        //print("The title is " + CellTitle)
-        
-        
-       // let vc = VCNewVehList.self
-        
-       // vc.ToTitle(VCNewVehList)
-        
     }
     
     

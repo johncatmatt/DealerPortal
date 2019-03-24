@@ -12,8 +12,6 @@ class VCNewVehList: UIViewController {
 
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var SearchBar: UISearchBar!
-  
-    @IBOutlet weak var titleButton: UIButton!
     
     var dealerNo: String = ""
     var paymentMethod: String = ""
@@ -118,10 +116,49 @@ class VCNewVehList: UIViewController {
     
     @IBAction func ToTitle(_ sender: Any) {
         buttonIndex = (sender as AnyObject).tag
+        print(buttonIndex)
         performSegue(withIdentifier: "ViewTitle", sender: self)
     }
     
  
+    @IBAction func MakePayment(_ sender: Any) {
+        buttonIndex = (sender as AnyObject).tag
+        print("This buttonIndex for Make payment is: " + String(buttonIndex))
+        print(currentArray[buttonIndex].VIN)
+        print(currentArray[buttonIndex].YrMakeMod)
+        print(currentArray[buttonIndex].curpay)
+        print(currentArray[buttonIndex].curtailduenet)
+
+        
+        
+        
+        if currentArray[buttonIndex].VIN != "No Data Recieved"{
+            
+            let msgPM = UIAlertController(title: "Payment", message: "Choose Payment Option", preferredStyle: UIAlertController.Style.alert)
+            msgPM.addAction(UIAlertAction(title: "Curtail Pament", style: .default, handler: { (action: UIAlertAction!) in
+                self.paymentMethod = "Curtail Payment"
+                msgPM.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "MakePayment", sender: self)
+            }))
+            msgPM.addAction(UIAlertAction(title: "Payoff", style: .default, handler: { (action: UIAlertAction!) in
+                self.paymentMethod = "Payoff"
+                msgPM.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "MakePayment", sender: self)
+            }))
+            msgPM.addAction(UIAlertAction(title: "Other Payment", style: .default, handler: { (action: UIAlertAction!) in
+                self.paymentMethod = "Other Payment"
+                msgPM.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "MakePayment", sender: self)
+            }))
+            msgPM.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction!) in
+                msgPM.dismiss(animated: true, completion: nil)
+            }))
+            present(msgPM, animated: true, completion: nil)
+        }
+        
+        
+        //performSegue(withIdentifier: "MakePayment", sender: self)
+    }
     
 }
 
@@ -143,8 +180,13 @@ extension VCNewVehList: UITableViewDelegate, UITableViewDataSource {
         let vh = currentArray[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleCell") as! VehicleCell
+        
         cell.setVehicles(v: vh)
+        
         cell.btnTitle.tag = indexPath.row
+        cell.btnPay.tag = indexPath.row
+        //print(cell.btnTitle.tag)
+        //print(cell.btnPayment.tag)
   
         
         return cell
@@ -153,51 +195,24 @@ extension VCNewVehList: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //gets the index of the selected row and performs the segue
-        currentIndex = indexPath.row
-        
-        if currentArray[currentIndex].VIN != "No Data Recieved"{
-        
-        let msgPM = UIAlertController(title: "Payment", message: "Choose Payment Option", preferredStyle: UIAlertController.Style.alert)
-        msgPM.addAction(UIAlertAction(title: "Curtail Pament", style: .default, handler: { (action: UIAlertAction!) in
-            self.paymentMethod = "Curtail Payment"
-            msgPM.dismiss(animated: true, completion: nil)
-            self.performSegue(withIdentifier: "MakePayment", sender: self)
-        }))
-        msgPM.addAction(UIAlertAction(title: "Payoff", style: .default, handler: { (action: UIAlertAction!) in
-            self.paymentMethod = "Payoff"
-            msgPM.dismiss(animated: true, completion: nil)
-            self.performSegue(withIdentifier: "MakePayment", sender: self)
-        }))
-        msgPM.addAction(UIAlertAction(title: "Other Payment", style: .default, handler: { (action: UIAlertAction!) in
-            self.paymentMethod = "Other Payment"
-            msgPM.dismiss(animated: true, completion: nil)
-            self.performSegue(withIdentifier: "MakePayment", sender: self)
-        }))
-        msgPM.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction!) in
-            msgPM.dismiss(animated: true, completion: nil)
-        }))
-        present(msgPM, animated: true, completion: nil)
-        }
+       
     }
     
-    
-   /* func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        print(currentArray[currentIndex].title)
-    }*/
     
     //prepares for the segue to the moredetail page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "MakePayment"{
             //sets the more page with the deals data
             let vc = segue.destination as! VCPayment
-            let a = currentArray[currentIndex]
-            vc.deal = a
+           
+            vc.deal = currentArray[buttonIndex]
+            
             vc.paymentMethod = paymentMethod
         }else if segue.identifier == "ViewTitle"{
             let vcT = segue.destination as! VCTitle
             //print(buttonIndex)
             vcT.vin = currentArray[buttonIndex].VIN
+            vcT.vehicle = currentArray[buttonIndex]
             
         }
     }

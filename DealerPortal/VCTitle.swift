@@ -11,9 +11,13 @@ import WebKit
 
 class VCTitle: UIViewController {
 
-    var vin: String = ""
     
+    var vehicle: VehicleData? = nil
+    var vin: String = ""
 
+   
+    
+    @IBOutlet weak var lblNoTitleMsg: UILabel!
     @IBOutlet weak var myWebView: WKWebView!
     
     struct TitleByteArray: Decodable {
@@ -25,9 +29,6 @@ class VCTitle: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
-        print("vin: " + vin)
        
         getTitle()
 
@@ -37,6 +38,9 @@ class VCTitle: UIViewController {
     
     func getTitle(){
         //starts the spinning icon
+       /*/ print(vehicle?.VIN)
+        print(vehicle?.YrMakeMod)
+        print(vehicle?.title)*/
         showSpinner(onView: self.view)
         
         //var tempArray: [] = []
@@ -44,6 +48,7 @@ class VCTitle: UIViewController {
         print(todoEndpoint)
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
+            self.removeSpinner()
             return
         }
         var urlRequest = URLRequest(url: url)
@@ -56,6 +61,7 @@ class VCTitle: UIViewController {
             
             guard error == nil else {
                 print("Error calling GET: \(error!)")
+                self.removeSpinner()
                 return
             }
             
@@ -67,17 +73,26 @@ class VCTitle: UIViewController {
                 let t = try JSONDecoder().decode(TitleByteArray.self, from: data)
                 
                 DispatchQueue.main.async {
-           
-                    if
-                        let decodeData = Data(base64Encoded: t.vl[0].imgData, options: .ignoreUnknownCharacters) {
-                        self.myWebView.load(decodeData, mimeType: "application/pdf", characterEncodingName: "utf-8", baseURL: URL(fileURLWithPath: ""))
+                    
+                    if t.vl.isEmpty{
+                        self.lblNoTitleMsg.isHidden = false
+                      
+                    }else{
+                        self.lblNoTitleMsg.isHidden = true
+                        for vTitle in t.vl{
+                            if  let decodeData = Data(base64Encoded: vTitle.imgData, options: .ignoreUnknownCharacters) {
+                                self.myWebView.load(decodeData, mimeType: "application/pdf", characterEncodingName: "utf-8", baseURL: URL(fileURLWithPath: ""))
+                            }
+                        }
+                    }
+                        self.removeSpinner()
                     }
                     
-                    self.removeSpinner()
-                    }
+                    
                
             }catch let jsonErr{
                 print("JSON Error: ", jsonErr)
+                self.removeSpinner()
             }
         }
         task.resume()
