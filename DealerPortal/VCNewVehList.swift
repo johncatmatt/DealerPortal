@@ -16,9 +16,12 @@ class VCNewVehList: UIViewController {
     @IBOutlet weak var titleButton: UIButton!
     
     var dealerNo: String = ""
+    var company: String = ""
     var paymentMethod: String = ""
     var currentIndex: Int = 999
-    
+
+    var deal: SearchMasterData? = nil
+
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     var TableVehiclesArray: [VehicleData] = []
@@ -49,7 +52,7 @@ class VCNewVehList: UIViewController {
         TableView.dataSource = self
         SearchBar.delegate = self
         // To Set your navigationBar title.
-        self.title = "Dealer: \(dealerNo)"
+        self.title = "\(dealerNo)  \(company)"
       /*
         // To Set your navigationBar backgound.
         self.barTintColor = .red
@@ -67,7 +70,7 @@ class VCNewVehList: UIViewController {
         showSpinner(onView: self.view)
         
         var tempArray: [VehicleData] = []
-      //  print(dealerNo)
+       print(dealerNo)
         
         let todoEndpoint: String = "https://secureservice.autouse.com/dlrweb/WebService1.asmx/getvehicle?dlrno=\(dealerNo)"
         guard let url = URL(string: todoEndpoint) else {

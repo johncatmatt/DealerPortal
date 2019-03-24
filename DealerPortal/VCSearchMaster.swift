@@ -28,7 +28,7 @@ class VCSearchMaster: UIViewController {
     var TableVehiclesArray: [SearchMasterData] = []
     var SearchArray: [SearchMasterData] = []
     var currentArray: [SearchMasterData] = []
-      var dealerNo: String = "00373"
+    //  var dealerNo: String = "00373"
     var buttonIndex = 9999
     
     struct SearchMasterList: Decodable {
@@ -55,8 +55,8 @@ class VCSearchMaster: UIViewController {
         SearchBar.delegate = self
         
         // To Set your navigationBar title.
-        self.title = "Dealer: \(dealerNo)"
-        // Do any additional setup after loading the view.
+     //   self.title = "Dealer: \(dealerNo)"
+         self.title = "AUTO USE / FloorPlan Dealers"        // Do any additional setup after loading the view.
     }
     
     func GetVehiclesFromSite() {
@@ -67,7 +67,7 @@ class VCSearchMaster: UIViewController {
         var tempArray: [SearchMasterData] = []
         //  print(dealerNo)
         
-        let todoEndpoint: String = "https://secureservice.autouse.com/dlrweb/WebService1.asmx/getSearchList?dlrNo=\(dealerNo)"
+        let todoEndpoint: String = "https://secureservice.autouse.com/dlrweb/WebService1.asmx/getSearchList?dlrNo=0"
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
             return
@@ -134,12 +134,20 @@ extension VCSearchMaster: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchMasterCell") as! SearchMasterCell
         cell.setSearchMaster(v: vh)
-      //  cell.btndealerNo.tag = indexPath.row
+        cell.btndealerNo.tag = indexPath.row
         
         
         return cell
         
     }
+    
+    @IBAction func ToNewVehList(_ sender: Any) {
+        buttonIndex = (sender as AnyObject).tag
+        print(buttonIndex)
+        performSegue(withIdentifier: "NewVehList", sender: self)
+    }
+    
+    
     
   /*
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -177,23 +185,27 @@ extension VCSearchMaster: UITableViewDelegate, UITableViewDataSource {
      }*/
     
   
-  /*
+  
     //prepares for the segue to the moredetail page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "MakePayment"{
+     //   if segue.identifier == "MakePayment"{
             //sets the more page with the deals data
-            let vc = segue.destination as! VCPayment
-            let a = currentArray[currentIndex]
+            let vc = segue.destination as! VCNewVehList
+            let a = currentArray[buttonIndex]
             vc.deal = a
-            vc.paymentMethod = paymentMethod
-        }else if segue.identifier == "ViewTitle"{
-            let vcT = segue.destination as! VCTitle
-            //print(buttonIndex)
-            vcT.vin = currentArray[buttonIndex].VIN
+            vc.dealerNo = a.dealerNo
+            vc.company = a.company
+        print(a.dealerNo)
+           print(a.company)
+        
+        //  }else if segue.identifier == "ViewTitle"{
+      //      let vcT = segue.destination as! VCTitle
+      //      //print(buttonIndex)
+      //      vcT.vin = currentArray[buttonIndex].VIN
             
-        }
+      //  }
     }
-   */
+   
 }
 //-------------------------------------------------------------------------------------------------------
 extension VCSearchMaster: UISearchBarDelegate {
