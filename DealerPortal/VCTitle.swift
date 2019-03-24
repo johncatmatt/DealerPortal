@@ -68,10 +68,10 @@ class VCTitle: UIViewController {
                 
                 DispatchQueue.main.async {
            
-                    if let decodeData = Data(base64Encoded: t.vl[0].imgData, options: .ignoreUnknownCharacters) {
+                    if
+                        let decodeData = Data(base64Encoded: t.vl[0].imgData, options: .ignoreUnknownCharacters) {
                         self.myWebView.load(decodeData, mimeType: "application/pdf", characterEncodingName: "utf-8", baseURL: URL(fileURLWithPath: ""))
                     }
-                   
                     
                     self.removeSpinner()
                     }
