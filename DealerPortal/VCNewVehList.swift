@@ -52,7 +52,19 @@ class VCNewVehList: UIViewController {
         TableView.dataSource = self
         SearchBar.delegate = self
         // To Set your navigationBar title.
-        self.title = "\(dealerNo)  \(company)"
+     //   self.title = "\(dealerNo)  \(company)"
+       
+        let upperTitle = NSMutableAttributedString(string: "\(dealerNo) \(company)", attributes: [NSAttributedString.Key.font: UIFont(name: "Arial", size: 17)!])
+  //      let lowerTitle = NSMutableAttributedString(string: "\n\((dealerNo)) \(company)", attributes: [NSAttributedString.Key.font: UIFont(name: "Arial", size: 11)! , NSAttributedString.Key.foregroundColor: UIColor.black])
+        
+      //  upperTitle.append(lowerTitle)
+        
+        let label1 = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height:66))
+        label1.numberOfLines = 0
+        label1.textAlignment = .center
+        label1.attributedText = upperTitle  //assign it to attributedText instead of text
+        self.navigationItem.titleView = label1
+        
       /*
         // To Set your navigationBar backgound.
         self.barTintColor = .red
