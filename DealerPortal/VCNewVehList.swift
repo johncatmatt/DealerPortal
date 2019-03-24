@@ -10,6 +10,7 @@ import UIKit
 
 class VCNewVehList: UIViewController {
 
+    @IBOutlet weak var lblColorLabel: UILabel!
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var SearchBar: UISearchBar!
     
@@ -200,6 +201,14 @@ extension VCNewVehList: UITableViewDelegate, UITableViewDataSource {
         
         cell.btnTitle.tag = indexPath.row
         cell.btnPay.tag = indexPath.row
+        
+        
+        if (indexPath.row % 2 == 0)
+        {
+            cell.backgroundColor = lblColorLabel.backgroundColor           //UIColor.init(red: 11, green: 20, blue: 26, alpha: 0.16) //colorForIndex(index: indexPath.row)
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
         //print(cell.btnTitle.tag)
         //print(cell.btnPayment.tag)
   
