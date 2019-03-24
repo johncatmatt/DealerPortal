@@ -128,6 +128,10 @@ extension VCPayment: UITableViewDelegate, UITableViewDataSource{
         }
         
         
+        //allows for multiple lines in the cell
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        
         return cell
     }
     
