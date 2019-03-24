@@ -12,6 +12,7 @@ class VCSearchMaster: UIViewController {
 
   //  @IBOutlet weak var lbloutstand: UITableView!
     
+    @IBOutlet weak var lblColor: UILabel!
     @IBOutlet weak var SearchBar: UISearchBar!
     @IBOutlet weak var TableView: UITableView!
     
@@ -57,6 +58,8 @@ class VCSearchMaster: UIViewController {
         // To Set your navigationBar title.
      //   self.title = "Dealer: \(dealerNo)"
          self.title = "AUTO USE / FloorPlan Dealers"        // Do any additional setup after loading the view.
+        lblColor.isHidden = true
+        
     }
     
     func GetVehiclesFromSite() {
@@ -114,6 +117,11 @@ class VCSearchMaster: UIViewController {
         }
         task.resume()
     }
+    
+  
+    
+   
+    
 
 }
 
@@ -136,10 +144,18 @@ extension VCSearchMaster: UITableViewDelegate, UITableViewDataSource {
         cell.setSearchMaster(v: vh)
         cell.btndealerNo.tag = indexPath.row
         
+        if (indexPath.row % 2 == 0)
+        {
+            cell.backgroundColor = lblColor.backgroundColor           //UIColor.init(red: 11, green: 20, blue: 26, alpha: 0.16) //colorForIndex(index: indexPath.row)
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
         
         return cell
         
     }
+
+    
     
     @IBAction func ToNewVehList(_ sender: Any) {
         buttonIndex = (sender as AnyObject).tag
@@ -206,6 +222,11 @@ extension VCSearchMaster: UITableViewDelegate, UITableViewDataSource {
       //  }
     }
    
+    
+    
+    
+    
+    
 }
 //-------------------------------------------------------------------------------------------------------
 extension VCSearchMaster: UISearchBarDelegate {
