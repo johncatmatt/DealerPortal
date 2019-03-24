@@ -120,9 +120,9 @@ extension VCPayment: UITableViewDelegate, UITableViewDataSource{
         case 1:
             cell.textLabel?.text = "YrMkMd: \(deal?.YrMakeMod ?? "nil")"
         case 2:
-            cell.textLabel?.text = "Curtail Payment: $\(deal?.curpay ?? "nil")"
+            cell.textLabel?.text = "Current Payoff: $\(deal?.curpay ?? "nil")"
         case 3:
-            cell.textLabel?.text = "Curtailduenet: $\(deal?.curtailduenet ?? "nil")"
+            cell.textLabel?.text = "Curtailment Due: $\(deal?.curtailduenet ?? "nil")"
         default:
             cell.textLabel?.text = "Unused indexpath.row value: \(String(indexPath.row))"
         }
