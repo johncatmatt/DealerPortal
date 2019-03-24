@@ -13,7 +13,7 @@ class VehicleCell: UITableViewCell {
     
     @IBOutlet weak var vin: UILabel!
     @IBOutlet weak var yrmakemod: UILabel!
-    @IBOutlet weak var curpay: UILabel!
+    @IBOutlet weak var curpayoff: UILabel!
     @IBOutlet weak var curtailduenet: UILabel!
     
     
@@ -30,13 +30,13 @@ class VehicleCell: UITableViewCell {
         if v.VIN.contains("No Data Recieved"){
             vin.text = "\(v.VIN)"
             yrmakemod.text = ""
-            curpay.text = ""
+            curpayoff.text = ""
             curtailduenet.text = ""
         }else{
             vin.text = "VIN: \(v.VIN)"
             yrmakemod.text = "\(v.YrMakeMod)"
-            curpay.text = "CurtailPayment: $\(v.curpay)"
-            curtailduenet.text = "Curtailduenet: $\(v.curtailduenet)"
+            curpayoff.text = "Current Payoff: $\(v.curpay)"
+            curtailduenet.text = "Curtailment Due: $\(v.curtailduenet)"
         }
        // CellTitle = v.title
         
