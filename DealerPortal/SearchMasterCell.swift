@@ -41,9 +41,18 @@ class SearchMasterCell: UITableViewCell {
                   let intLine = Int(Float(myLine)!)
                   let intOut = Int(Float(myOutstand)!)
                   let intAvail = intLine - intOut
+              
+                if (intAvail >= 0) {
+                      lblAvail.textColor = UIColor.black
+                } else {
+                    lblAvail.textColor = UIColor.red }
                 
-                       lblAvail.text = "Avail:$\(intAvail)"
-                 lblUnits.text = "Cnt:\(myUnits)"
+        
+                
+                  lblAvail.text = "Avail:$\(intAvail)"
+                
+            
+                 lblUnits.text = "Active:\(myUnits)"
                 
         }
     

@@ -17,6 +17,7 @@ class SearchMasterData {
     var outstand: String
     var units: String
     
+
     
     init(dealerNo: String, cifNo: String, company: String, lineAmount: String, outstand: String, units: String) {
         
