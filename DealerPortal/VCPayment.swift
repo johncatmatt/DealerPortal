@@ -33,7 +33,7 @@ class VCPayment: UIViewController {
     
     
     func makePayment() {
-        //print("Payment Made! ;)")
+        //print("Payment Made!)")
     }
     
     @IBAction func makePaymentButtonClicked(_ sender: Any) {
