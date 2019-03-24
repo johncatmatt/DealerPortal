@@ -95,7 +95,7 @@ class VCSearchMaster: UIViewController {
                 DispatchQueue.main.async {
                     for v in myVehList.vl{
                         let myVeh = SearchMasterData(dealerNo: v.dealerNo, cifNo: v.cifNo, company: v.company, lineAmount: v.lineAmount, outstand: v.outstand, units: v.units)
-                 print(myVeh.company)
+              //   print(myVeh.company)
                         tempArray.append(myVeh)
                     }
                     
@@ -120,7 +120,7 @@ class VCSearchMaster: UIViewController {
 extension VCSearchMaster: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40.0;
+        return 60.0;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
