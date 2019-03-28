@@ -12,7 +12,7 @@ import WebKit
 class VCTitle: UIViewController {
 
     
-    var vehicle: VehicleData? = nil
+    var vehicle: VehicleListData? = nil
     var vin: String = ""
 
    

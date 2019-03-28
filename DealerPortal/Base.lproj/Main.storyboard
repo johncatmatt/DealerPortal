@@ -18,12 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Enter text or numeric search limits " translatesAutoresizingMaskIntoConstraints="NO" id="6sx-Kp-r50">
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Enter text or numeric search limits " translatesAutoresizingMaskIntoConstraints="NO" id="6sx-Kp-r50">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="goh-Xo-hx9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="goh-Xo-hx9">
                                 <rect key="frame" x="0.0" y="144" width="404" height="718"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblColor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3GI-Fd-czt">
                                     <rect key="frame" x="0.0" y="94" width="404" height="44"/>
@@ -99,15 +101,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="6sx-Kp-r50" firstAttribute="leading" secondItem="r45-YE-I36" secondAttribute="leading" id="3s5-T9-n1J"/>
-                            <constraint firstItem="goh-Xo-hx9" firstAttribute="top" secondItem="6sx-Kp-r50" secondAttribute="bottom" id="NEx-SB-4UX"/>
-                            <constraint firstItem="goh-Xo-hx9" firstAttribute="leading" secondItem="r45-YE-I36" secondAttribute="leading" id="NWn-8H-9ib"/>
-                            <constraint firstItem="6sx-Kp-r50" firstAttribute="trailing" secondItem="r45-YE-I36" secondAttribute="trailing" id="Py1-jO-cRE"/>
-                            <constraint firstItem="r45-YE-I36" firstAttribute="trailing" secondItem="goh-Xo-hx9" secondAttribute="trailing" constant="10" id="R50-kH-WVY"/>
-                            <constraint firstItem="6sx-Kp-r50" firstAttribute="top" secondItem="r45-YE-I36" secondAttribute="top" id="kim-Ed-gKY"/>
-                            <constraint firstItem="goh-Xo-hx9" firstAttribute="bottom" secondItem="r45-YE-I36" secondAttribute="bottom" id="oNa-PT-GRP"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="r45-YE-I36"/>
                     </view>
                     <navigationItem key="navigationItem" id="xv4-lP-dcr"/>
@@ -168,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="1387" y="-796"/>
         </scene>
-        <!--New Veh List-->
+        <!--Vehicle List-->
         <scene sceneID="NY2-Mi-ag4">
             <objects>
-                <viewController id="oVG-PW-3qU" customClass="VCNewVehList" customModule="DealerPortal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oVG-PW-3qU" customClass="VCVehicleList" customModule="DealerPortal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uG0-Lj-O47">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,7 +181,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="vehicleCell" rowHeight="314" id="vQz-Oc-hNX" customClass="VehicleCell" customModule="DealerPortal" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="vehicleCell" rowHeight="314" id="vQz-Oc-hNX" customClass="VehicleListCell" customModule="DealerPortal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="314"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vQz-Oc-hNX" id="UMW-qK-urf">
@@ -268,7 +261,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="m2a-PJ-Xlz">
+                            <searchBar contentMode="redraw" placeholder="Enter text or numeric search limits " translatesAutoresizingMaskIntoConstraints="NO" id="m2a-PJ-Xlz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -372,7 +365,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xXD-0j-Gq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-507" y="-1498"/>
+            <point key="canvasLocation" x="-400" y="-1499"/>
         </scene>
     </scenes>
 </document>

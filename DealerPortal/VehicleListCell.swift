@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VehicleCell: UITableViewCell {
+class VehicleListCell: UITableViewCell {
 
     
     @IBOutlet weak var vin: UILabel!
@@ -20,10 +20,10 @@ class VehicleCell: UITableViewCell {
     @IBOutlet weak var btnPay: UIButton!
     @IBOutlet weak var btnTitle: UIButton!
     //var CellTitle: String = ""
-    var vdata: VehicleData = VehicleData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "")
+    var vdata: VehicleListData = VehicleListData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "")
     //var v: VCNewVehList = nil
     
-    func setVehicles(v: VehicleData){
+    func setVehicles(v: VehicleListData){
         
         vdata = v
         

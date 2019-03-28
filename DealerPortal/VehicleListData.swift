@@ -8,7 +8,7 @@
 
 import Foundation
 
-class VehicleData {
+class VehicleListData {
     
     var VIN: String
     var YrMakeMod: String

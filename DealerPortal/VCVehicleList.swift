@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VCNewVehList: UIViewController {
+class VCVehicleList: UIViewController {
 
     @IBOutlet weak var lblColorLabel: UILabel!
     @IBOutlet weak var TableView: UITableView!
@@ -23,9 +23,9 @@ class VCNewVehList: UIViewController {
 
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
-    var TableVehiclesArray: [VehicleData] = []
-    var SearchArray: [VehicleData] = []
-    var currentArray: [VehicleData] = []
+    var TableVehiclesArray: [VehicleListData] = []
+    var SearchArray: [VehicleListData] = []
+    var currentArray: [VehicleListData] = []
     
     var buttonIndex = 9999
     
@@ -81,7 +81,7 @@ class VCNewVehList: UIViewController {
         //starts the spinning icon
         showSpinner(onView: self.view)
         
-        var tempArray: [VehicleData] = []
+        var tempArray: [VehicleListData] = []
        print(dealerNo)
         
         let todoEndpoint: String = "https://secureservice.autouse.com/dlrweb/WebService1.asmx/getvehicle?dlrno=\(dealerNo)"
@@ -113,12 +113,12 @@ class VCNewVehList: UIViewController {
                 
                 DispatchQueue.main.async {
                     for v in myVehList.vl{
-                        let myVeh = VehicleData(VIN: v.Vin, YrMakeMod: v.YrMakeMod, curpayoff: v.curpayoff, curtailduenet: v.curtailduenet, title: v.tit_Number)
+                        let myVeh = VehicleListData(VIN: v.Vin, YrMakeMod: v.YrMakeMod, curpayoff: v.curpayoff, curtailduenet: v.curtailduenet, title: v.tit_Number)
                         tempArray.append(myVeh)
                     }
                 
                    if myVehList.vl.isEmpty{
-                    tempArray = [VehicleData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "")]
+                    tempArray = [VehicleListData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "")]
                     }
                     self.TableVehiclesArray = tempArray
                     self.currentArray = tempArray
@@ -181,7 +181,7 @@ class VCNewVehList: UIViewController {
 
 
 
-extension VCNewVehList: UITableViewDelegate, UITableViewDataSource {
+extension VCVehicleList: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 190.0;
@@ -196,7 +196,7 @@ extension VCNewVehList: UITableViewDelegate, UITableViewDataSource {
 
         let vh = currentArray[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleCell") as! VehicleCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleCell") as! VehicleListCell
         
         cell.setVehicles(v: vh)
         
@@ -244,7 +244,7 @@ extension VCNewVehList: UITableViewDelegate, UITableViewDataSource {
 
 }
 //-------------------------------------------------------------------------------------------------------
-extension VCNewVehList: UISearchBarDelegate {
+extension VCVehicleList: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }

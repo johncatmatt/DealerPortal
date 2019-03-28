@@ -206,7 +206,7 @@ extension VCSearchMaster: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
      //   if segue.identifier == "MakePayment"{
             //sets the more page with the deals data
-            let vc = segue.destination as! VCNewVehList
+            let vc = segue.destination as! VCVehicleList
             let a = currentArray[buttonIndex]
             vc.deal = a
             vc.dealerNo = a.dealerNo
