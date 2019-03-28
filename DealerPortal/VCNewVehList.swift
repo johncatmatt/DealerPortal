@@ -38,6 +38,7 @@ class VCNewVehList: UIViewController {
         var curpayoff : String
         var curtailduenet : String
         var tit_Number : String
+        //var errorCheck : String
     }
     
     
@@ -86,6 +87,7 @@ class VCNewVehList: UIViewController {
         let todoEndpoint: String = "https://secureservice.autouse.com/dlrweb/WebService1.asmx/getvehicle?dlrno=\(dealerNo)"
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
+            self.removeSpinner()
             return
         }
         var urlRequest = URLRequest(url: url)
@@ -98,6 +100,7 @@ class VCNewVehList: UIViewController {
             
             guard error == nil else {
                 print("Error calling GET: \(error!)")
+                self.removeSpinner()
                 return
             }
             
@@ -125,6 +128,7 @@ class VCNewVehList: UIViewController {
                 }
             }catch let jsonErr{
                 print("JSON Error: ", jsonErr)
+                self.removeSpinner()
             }
         }
         task.resume()
@@ -145,9 +149,6 @@ class VCNewVehList: UIViewController {
         print(currentArray[buttonIndex].curpay)
         print(currentArray[buttonIndex].curtailduenet)
 
-        
-        
-        
         if currentArray[buttonIndex].VIN != "No Data Recieved"{
             
             let msgPM = UIAlertController(title: "Payment", message: "Choose Payment Option", preferredStyle: UIAlertController.Style.alert)
