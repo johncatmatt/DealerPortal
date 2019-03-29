@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D2D966C2246B52600527FD1 /* VCTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D966B2246B52600527FD1 /* VCTitle.swift */; };
 		2D3B66DE224D5B6E00DDFA14 /* VCPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B66DD224D5B6E00DDFA14 /* VCPayment.swift */; };
+		2D3B66E0224E956200DDFA14 /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B66DF224E956200DDFA14 /* PaymentCell.swift */; };
 		2D41A79921D3CEE300BFE874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41A79821D3CEE300BFE874 /* AppDelegate.swift */; };
 		2D41A79E21D3CEE300BFE874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D41A79C21D3CEE300BFE874 /* Main.storyboard */; };
 		2D41A7A021D3CEEE00BFE874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D41A79F21D3CEEE00BFE874 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		2D2D966B2246B52600527FD1 /* VCTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTitle.swift; sourceTree = "<group>"; };
 		2D3B66DD224D5B6E00DDFA14 /* VCPayment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCPayment.swift; path = ../../../.Trash/VCPayment.swift; sourceTree = "<group>"; };
+		2D3B66DF224E956200DDFA14 /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
 		2D41A79521D3CEE300BFE874 /* DealerPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealerPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D41A79821D3CEE300BFE874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D41A79D21D3CEE300BFE874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				2DF179A42231C5A100181165 /* VehicleListData.swift */,
 				2D2D966B2246B52600527FD1 /* VCTitle.swift */,
 				2D41A79C21D3CEE300BFE874 /* Main.storyboard */,
+				2D3B66DF224E956200DDFA14 /* PaymentCell.swift */,
 				2D41A79F21D3CEEE00BFE874 /* Assets.xcassets */,
 				2D41A7A121D3CEEE00BFE874 /* LaunchScreen.storyboard */,
 				2D41A7A421D3CEEE00BFE874 /* Info.plist */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D3B66E0224E956200DDFA14 /* PaymentCell.swift in Sources */,
 				2DF179A52231C5A100181165 /* VehicleListData.swift in Sources */,
 				6056880D22478EEF00075A06 /* SearchMasterCell.swift in Sources */,
 				2DF179A32231C1EE00181165 /* VehicleListCell.swift in Sources */,

@@ -69,10 +69,11 @@ class VCSearchMaster: UIViewController {
         
         var tempArray: [SearchMasterData] = []
         //  print(dealerNo)
-        
+        //"https://secureservice.autouse.com/dlrweb/WebService1.asmx/getvehicle?dlrno=\(dealerNo)"
         let todoEndpoint: String = "https://secureservice.autouse.com/dlrweb/WebService1.asmx/getSearchList?dlrNo=0"
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
+            self.removeSpinner()
             return
         }
         var urlRequest = URLRequest(url: url)
@@ -85,9 +86,10 @@ class VCSearchMaster: UIViewController {
             
             guard error == nil else {
                 print("Error calling GET: \(error!)")
+                self.removeSpinner()
                 return
             }
-            
+
             guard let data = data else { print("DATA error"); return }
             //print(data)
             
@@ -113,6 +115,7 @@ class VCSearchMaster: UIViewController {
                 }
             }catch let jsonErr{
                 print("JSON Error: ", jsonErr)
+                self.removeSpinner()
             }
         }
         task.resume()
@@ -242,7 +245,11 @@ extension VCSearchMaster: UISearchBarDelegate {
         }
         currentArray = TableVehiclesArray.filter({ (searchMasterData) -> Bool in
             searchMasterData.company.lowercased().contains(searchText.lowercased()) ||
-                searchMasterData.dealerNo.lowercased().contains(searchText.lowercased())
+                searchMasterData.dealerNo.lowercased().contains(searchText.lowercased()) ||
+                searchMasterData.lineAmount.lowercased().contains(searchText.lowercased()) ||
+                searchMasterData.cifNo.lowercased().contains(searchText.lowercased()) ||
+                searchMasterData.outstand.lowercased().contains(searchText.lowercased()) ||
+                searchMasterData.units.lowercased().contains(searchText.lowercased())
                 // ||
                 //VehicleData.curtailduenet.lowercased().contains(searchText.lowercased()) ||
                 // VehicleData.YrMakeMod.lowercased().contains(searchText.lowercased())

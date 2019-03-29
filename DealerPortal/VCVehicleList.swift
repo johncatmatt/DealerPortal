@@ -1,10 +1,13 @@
-//
+/*
 //  VCNewVehList.swift
 //  DealerPortal
-//
+
+ This file is part of DealerPortal
+ 
+ 
 //  Created by Matthew Sansoucie on 3/7/19.
 //  Copyright © 2019 Matthew Sansoucie. All rights reserved.
-//
+*/
 
 import UIKit
 
@@ -47,32 +50,16 @@ class VCVehicleList: UIViewController {
         
          GetVehiclesFromSite()
 
-        
         TableView.delegate = self
         TableView.dataSource = self
         SearchBar.delegate = self
-        // To Set your navigationBar title.
-     //   self.title = "\(dealerNo)  \(company)"
        
         let upperTitle = NSMutableAttributedString(string: "\(dealerNo) \(company)", attributes: [NSAttributedString.Key.font: UIFont(name: "Arial", size: 17)!])
-  //      let lowerTitle = NSMutableAttributedString(string: "\n\((dealerNo)) \(company)", attributes: [NSAttributedString.Key.font: UIFont(name: "Arial", size: 11)! , NSAttributedString.Key.foregroundColor: UIColor.black])
-        
-      //  upperTitle.append(lowerTitle)
-        
         let label1 = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height:66))
         label1.numberOfLines = 0
         label1.textAlignment = .center
         label1.attributedText = upperTitle  //assign it to attributedText instead of text
         self.navigationItem.titleView = label1
-        
-      /*
-        // To Set your navigationBar backgound.
-        self.barTintColor = .red
-        
-        // To Set your navigationBar title font and color.
-        self.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.green, NSFontAttributeName:UIFont(name:"HelveticaNeue", size: 26)!]
-        */
-        
     }
     
     
@@ -172,9 +159,7 @@ class VCVehicleList: UIViewController {
             }))
             present(msgPM, animated: true, completion: nil)
         }
-        
-        
-        //performSegue(withIdentifier: "MakePayment", sender: self)
+   
     }
     
 }
@@ -188,7 +173,6 @@ extension VCVehicleList: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return currentArray.count
     }
     
@@ -206,12 +190,11 @@ extension VCVehicleList: UITableViewDelegate, UITableViewDataSource {
         
         if (indexPath.row % 2 == 0)
         {
-            cell.backgroundColor = lblColorLabel.backgroundColor           //UIColor.init(red: 11, green: 20, blue: 26, alpha: 0.16) //colorForIndex(index: indexPath.row)
+            cell.backgroundColor = lblColorLabel.backgroundColor
         } else {
             cell.backgroundColor = UIColor.white
         }
-        //print(cell.btnTitle.tag)
-        //print(cell.btnPayment.tag)
+  
   
         
         return cell

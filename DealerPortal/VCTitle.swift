@@ -14,8 +14,6 @@ class VCTitle: UIViewController {
     
     var vehicle: VehicleListData? = nil
     var vin: String = ""
-
-   
     
     @IBOutlet weak var lblNoTitleMsg: UILabel!
     @IBOutlet weak var myWebView: WKWebView!
