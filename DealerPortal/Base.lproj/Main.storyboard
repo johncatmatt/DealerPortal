@@ -219,45 +219,53 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZT-CG-fhh">
-                                                    <rect key="frame" x="20" y="141" width="38" height="36"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <state key="normal" title="Title"/>
-                                                    <connections>
-                                                        <action selector="ToTitle:" destination="oVG-PW-3qU" eventType="touchUpInside" id="qY7-5K-lX7"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52I-e6-dGb">
-                                                    <rect key="frame" x="266" y="144" width="128" height="36"/>
+                                                    <rect key="frame" x="266" y="169" width="128" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <state key="normal" title="Make Payment"/>
                                                     <connections>
                                                         <action selector="MakePayment:" destination="oVG-PW-3qU" eventType="touchUpInside" id="ZVB-a6-Fan"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sds-ZM-CNO">
+                                                    <rect key="frame" x="20" y="140" width="374" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZT-CG-fhh">
+                                                    <rect key="frame" x="20" y="169" width="38" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="Title"/>
+                                                    <connections>
+                                                        <action selector="ToTitle:" destination="oVG-PW-3qU" eventType="touchUpInside" id="qY7-5K-lX7"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8Tt-rT-5UD" firstAttribute="top" secondItem="XTR-kv-dFT" secondAttribute="bottom" constant="8" id="8c8-SA-1cI"/>
-                                                <constraint firstItem="3ZT-CG-fhh" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="BEe-wG-STZ"/>
-                                                <constraint firstItem="iUD-FF-ReG" firstAttribute="top" secondItem="UMW-qK-urf" secondAttribute="topMargin" constant="13" id="Krr-qS-Bcx"/>
-                                                <constraint firstItem="8Tt-rT-5UD" firstAttribute="trailing" secondItem="UMW-qK-urf" secondAttribute="trailingMargin" id="Kv1-h8-GQM"/>
-                                                <constraint firstItem="3ZT-CG-fhh" firstAttribute="top" secondItem="8Tt-rT-5UD" secondAttribute="bottom" constant="9" id="Q0K-kT-ePc"/>
-                                                <constraint firstItem="3ZT-CG-fhh" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="Qi2-mo-6uz"/>
-                                                <constraint firstItem="Tms-Lx-A3t" firstAttribute="trailing" secondItem="UMW-qK-urf" secondAttribute="trailingMargin" id="RVP-Fs-7Jv"/>
-                                                <constraint firstItem="iUD-FF-ReG" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="Rt2-kV-ufx"/>
-                                                <constraint firstItem="52I-e6-dGb" firstAttribute="trailing" secondItem="UMW-qK-urf" secondAttribute="trailingMargin" id="SDy-eF-hxf"/>
-                                                <constraint firstItem="iUD-FF-ReG" firstAttribute="trailing" secondItem="UMW-qK-urf" secondAttribute="trailingMargin" id="TLh-Zt-Abk"/>
-                                                <constraint firstItem="Tms-Lx-A3t" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="Vyc-g5-cre"/>
-                                                <constraint firstItem="XTR-kv-dFT" firstAttribute="top" secondItem="Tms-Lx-A3t" secondAttribute="bottom" constant="8" id="W42-oY-nSE"/>
-                                                <constraint firstItem="52I-e6-dGb" firstAttribute="top" secondItem="8Tt-rT-5UD" secondAttribute="bottom" constant="12" id="Woz-cR-EKH"/>
-                                                <constraint firstItem="XTR-kv-dFT" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="a9e-Va-xRF"/>
-                                                <constraint firstItem="3ZT-CG-fhh" firstAttribute="top" secondItem="8Tt-rT-5UD" secondAttribute="bottom" constant="9" id="c6U-2v-IFT"/>
-                                                <constraint firstItem="Tms-Lx-A3t" firstAttribute="top" secondItem="iUD-FF-ReG" secondAttribute="bottom" constant="8" id="cgu-mb-dOS"/>
-                                                <constraint firstItem="8Tt-rT-5UD" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="haT-XB-9Bp"/>
-                                                <constraint firstItem="XTR-kv-dFT" firstAttribute="trailing" secondItem="UMW-qK-urf" secondAttribute="trailingMargin" id="u3l-Ln-LeC"/>
+                                                <constraint firstItem="3ZT-CG-fhh" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="3uk-zt-k8a"/>
+                                                <constraint firstItem="Tms-Lx-A3t" firstAttribute="trailing" secondItem="UMW-qK-urf" secondAttribute="trailingMargin" id="9Ve-lK-9a0"/>
+                                                <constraint firstItem="XTR-kv-dFT" firstAttribute="top" secondItem="Tms-Lx-A3t" secondAttribute="bottom" constant="8" id="F4E-8h-ksQ"/>
+                                                <constraint firstItem="XTR-kv-dFT" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="Ju6-Ht-2tg"/>
+                                                <constraint firstItem="iUD-FF-ReG" firstAttribute="trailing" secondItem="UMW-qK-urf" secondAttribute="trailingMargin" id="N7m-4L-eo0"/>
+                                                <constraint firstItem="Tms-Lx-A3t" firstAttribute="top" secondItem="iUD-FF-ReG" secondAttribute="bottom" constant="8" id="NFg-9k-4bS"/>
+                                                <constraint firstItem="52I-e6-dGb" firstAttribute="top" secondItem="sds-ZM-CNO" secondAttribute="bottom" constant="8" id="a6l-YI-fWC"/>
+                                                <constraint firstItem="iUD-FF-ReG" firstAttribute="top" secondItem="UMW-qK-urf" secondAttribute="topMargin" constant="13" id="bdJ-vE-52U"/>
+                                                <constraint firstItem="8Tt-rT-5UD" firstAttribute="top" secondItem="XTR-kv-dFT" secondAttribute="bottom" constant="8" id="c4K-65-0I3"/>
+                                                <constraint firstItem="iUD-FF-ReG" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="c4Z-hp-48f"/>
+                                                <constraint firstItem="8Tt-rT-5UD" firstAttribute="trailing" secondItem="UMW-qK-urf" secondAttribute="trailingMargin" id="dgV-DY-uZH"/>
+                                                <constraint firstItem="XTR-kv-dFT" firstAttribute="trailing" secondItem="UMW-qK-urf" secondAttribute="trailingMargin" id="fAR-p6-9eA"/>
+                                                <constraint firstItem="3ZT-CG-fhh" firstAttribute="top" secondItem="sds-ZM-CNO" secondAttribute="bottom" constant="8" id="j7D-bD-QTT"/>
+                                                <constraint firstItem="sds-ZM-CNO" firstAttribute="trailing" secondItem="UMW-qK-urf" secondAttribute="trailingMargin" id="l3X-Bf-bms"/>
+                                                <constraint firstItem="8Tt-rT-5UD" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="mdx-ZU-Qjn"/>
+                                                <constraint firstItem="Tms-Lx-A3t" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="tEI-vs-p7c"/>
+                                                <constraint firstItem="sds-ZM-CNO" firstAttribute="top" secondItem="8Tt-rT-5UD" secondAttribute="bottom" constant="8" id="vMk-gS-PyB"/>
+                                                <constraint firstItem="52I-e6-dGb" firstAttribute="trailing" secondItem="UMW-qK-urf" secondAttribute="trailingMargin" id="wWN-d7-OAw"/>
+                                                <constraint firstItem="sds-ZM-CNO" firstAttribute="leading" secondItem="UMW-qK-urf" secondAttribute="leadingMargin" id="zVG-Sf-KAT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="Auction" destination="sds-ZM-CNO" id="Rud-QX-DhR"/>
                                             <outlet property="btnPay" destination="52I-e6-dGb" id="PEQ-VY-35F"/>
                                             <outlet property="btnTitle" destination="3ZT-CG-fhh" id="nnr-MG-q7f"/>
                                             <outlet property="curpayoff" destination="XTR-kv-dFT" id="4Kd-Ab-eQa"/>
@@ -296,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjY-fa-dYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1388" y="-1499"/>
+            <point key="canvasLocation" x="1386.9565217391305" y="-1499.3303571428571"/>
         </scene>
         <!--Payment-->
         <scene sceneID="AzE-ig-SU9">

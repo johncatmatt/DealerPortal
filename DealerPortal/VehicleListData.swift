@@ -15,9 +15,11 @@ class VehicleListData {
     var curpay: String
     var curtailduenet: String
     var title: String
+    var Auction: String
+    
 
     
-    init(VIN: String, YrMakeMod: String, curpayoff: String, curtailduenet: String, title: String) {
+    init(VIN: String, YrMakeMod: String, curpayoff: String, curtailduenet: String, title: String, Auction: String) {
         
         if (VIN != "" && YrMakeMod != "" && curpayoff != "" && curtailduenet != ""){
         
@@ -31,6 +33,7 @@ class VehicleListData {
         self.curtailduenet =  String(format: "%.2f", tempcurtailduenet ?? "00000.00000 (UnkonwnError)")
             
         self.title = title
+        self.Auction = Auction
             
         }else{
             self.VIN = "No Data Recieved"
@@ -38,6 +41,7 @@ class VehicleListData {
             self.YrMakeMod = ""
             self.curtailduenet = ""
             self.title = ""
+            self.Auction = Auction
         }
     }
 

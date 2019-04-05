@@ -41,6 +41,7 @@ class VCVehicleList: UIViewController {
         var curpayoff : String
         var curtailduenet : String
         var tit_Number : String
+        var Auction : String
         //var errorCheck : String
     }
     
@@ -100,12 +101,12 @@ class VCVehicleList: UIViewController {
                 
                 DispatchQueue.main.async {
                     for v in myVehList.vl{
-                        let myVeh = VehicleListData(VIN: v.Vin, YrMakeMod: v.YrMakeMod, curpayoff: v.curpayoff, curtailduenet: v.curtailduenet, title: v.tit_Number)
+                        let myVeh = VehicleListData(VIN: v.Vin, YrMakeMod: v.YrMakeMod, curpayoff: v.curpayoff, curtailduenet: v.curtailduenet, title: v.tit_Number, Auction: v.Auction)
                         tempArray.append(myVeh)
                     }
                 
                    if myVehList.vl.isEmpty{
-                    tempArray = [VehicleListData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "")]
+                    tempArray = [VehicleListData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "", Auction: "")]
                     }
                     self.TableVehiclesArray = tempArray
                     self.currentArray = tempArray
@@ -169,7 +170,7 @@ class VCVehicleList: UIViewController {
 extension VCVehicleList: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190.0;
+        return 200.0;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
