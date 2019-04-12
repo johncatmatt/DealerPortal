@@ -43,7 +43,7 @@ class VCTitle: UIViewController {
         
         //var tempArray: [] = []
         let todoEndpoint: String = "https://secureservice.autouse.com/dlrweb/WebService1.asmx/getTitle?vin=\(vin)"
-        print(todoEndpoint)
+        //print(todoEndpoint)
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
             self.removeSpinner()
@@ -64,7 +64,7 @@ class VCTitle: UIViewController {
             }
             
             guard let data = data else { print("DATA error"); return }
-            print(data)
+            //print(data)
             
             do {
                 //decodes the vehicles from the json

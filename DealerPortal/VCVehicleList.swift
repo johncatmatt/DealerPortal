@@ -24,7 +24,7 @@ class VCVehicleList: UIViewController {
 
     var deal: SearchMasterData? = nil
 
-    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+    //var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     var TableVehiclesArray: [VehicleListData] = []
     var SearchArray: [VehicleListData] = []
@@ -42,6 +42,7 @@ class VCVehicleList: UIViewController {
         var curtailduenet : String
         var tit_Number : String
         var Auction : String
+        var AuctionSeller: String
         //var errorCheck : String
     }
     
@@ -101,12 +102,12 @@ class VCVehicleList: UIViewController {
                 
                 DispatchQueue.main.async {
                     for v in myVehList.vl{
-                        let myVeh = VehicleListData(VIN: v.Vin, YrMakeMod: v.YrMakeMod, curpayoff: v.curpayoff, curtailduenet: v.curtailduenet, title: v.tit_Number, Auction: v.Auction)
+                        let myVeh = VehicleListData(VIN: v.Vin, YrMakeMod: v.YrMakeMod, curpayoff: v.curpayoff, curtailduenet: v.curtailduenet, title: v.tit_Number, Auction: v.Auction, AuctionSeller: v.AuctionSeller)
                         tempArray.append(myVeh)
                     }
                 
                    if myVehList.vl.isEmpty{
-                    tempArray = [VehicleListData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "", Auction: "")]
+                    tempArray = [VehicleListData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "", Auction: "", AuctionSeller: "")]
                     }
                     self.TableVehiclesArray = tempArray
                     self.currentArray = tempArray
@@ -116,6 +117,7 @@ class VCVehicleList: UIViewController {
                 }
             }catch let jsonErr{
                 print("JSON Error: ", jsonErr)
+            
                 self.removeSpinner()
             }
         }
@@ -170,7 +172,7 @@ class VCVehicleList: UIViewController {
 extension VCVehicleList: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0;
+        return 250.0;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

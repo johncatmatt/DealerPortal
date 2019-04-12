@@ -16,12 +16,13 @@ class VehicleListCell: UITableViewCell {
     @IBOutlet weak var curpayoff: UILabel!
     @IBOutlet weak var curtailduenet: UILabel!
     @IBOutlet weak var Auction: UILabel!
+    @IBOutlet weak var AuctionSeller: UILabel!
     
     
     @IBOutlet weak var btnPay: UIButton!
     @IBOutlet weak var btnTitle: UIButton!
     //var CellTitle: String = ""
-    var vdata: VehicleListData = VehicleListData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "", Auction: "")
+    var vdata: VehicleListData = VehicleListData(VIN: "", YrMakeMod: "", curpayoff: "", curtailduenet: "", title: "", Auction: "", AuctionSeller: "")
     //var v: VCNewVehList = nil
     
     func setVehicles(v: VehicleListData){
@@ -34,12 +35,25 @@ class VehicleListCell: UITableViewCell {
             curpayoff.text = ""
             curtailduenet.text = ""
             Auction.text = ""
+            AuctionSeller.text = ""
         }else{
             vin.text = "VIN: \(v.VIN)"
             yrmakemod.text = "\(v.YrMakeMod)"
             curpayoff.text = "Current Payoff: $\(v.curpay)"
             curtailduenet.text = "Curtailment Due: $\(v.curtailduenet)"
-            Auction.text = v.Auction
+            
+            if v.Auction == ""{
+                Auction.text = v.Auction
+            }else{
+                Auction.text = "Auction: \(v.Auction)"
+            }
+            
+            if v.AuctionSeller == ""{
+                AuctionSeller.text = v.AuctionSeller
+            }else{
+                AuctionSeller.text = "Seller: \(v.AuctionSeller)"
+            }
+            
         }
        // CellTitle = v.title
         

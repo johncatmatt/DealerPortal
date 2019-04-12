@@ -17,9 +17,9 @@ class VCSearchMaster: UIViewController {
     @IBOutlet weak var TableView: UITableView!
     
     
-    //  @IBOutlet weak var lbllineAmount: UITableView!
-  //  @IBOutlet weak var lblunits: UITableView!
-  //  @IBOutlet weak var lblcifNo: UILabel!
+   //  @IBOutlet weak var lbllineAmount: UITableView!
+   //  @IBOutlet weak var lblunits: UITableView!
+   //  @IBOutlet weak var lblcifNo: UILabel!
     
   
     var currentIndex: Int = 999
@@ -42,14 +42,14 @@ class VCSearchMaster: UIViewController {
         var lineAmount : String
         var outstand : String
         var units : String
-        
+
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-           GetVehiclesFromSite()
+        GetVehiclesFromSite()
         
         TableView.delegate = self
         TableView.dataSource = self
@@ -86,6 +86,8 @@ class VCSearchMaster: UIViewController {
             
             guard error == nil else {
                 print("Error calling GET: \(error!)")
+            
+                
                 self.removeSpinner()
                 return
             }
@@ -214,8 +216,8 @@ extension VCSearchMaster: UITableViewDelegate, UITableViewDataSource {
             vc.deal = a
             vc.dealerNo = a.dealerNo
             vc.company = a.company
-        print(a.dealerNo)
-           print(a.company)
+        //print(a.dealerNo)
+          // print(a.company)
         
         //  }else if segue.identifier == "ViewTitle"{
       //      let vcT = segue.destination as! VCTitle
