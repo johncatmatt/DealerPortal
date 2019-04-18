@@ -71,7 +71,7 @@ class VCVehicleList: UIViewController {
         showSpinner(onView: self.view)
         
         var tempArray: [VehicleListData] = []
-       print(dealerNo)
+      // print(dealerNo)
         
         let todoEndpoint: String = "https://secureservice.autouse.com/dlrweb/WebService1.asmx/getvehicle?dlrno=\(dealerNo)"
         guard let url = URL(string: todoEndpoint) else {
@@ -126,18 +126,18 @@ class VCVehicleList: UIViewController {
     
     @IBAction func ToTitle(_ sender: Any) {
         buttonIndex = (sender as AnyObject).tag
-        print(buttonIndex)
+        //print(buttonIndex)
         performSegue(withIdentifier: "ViewTitle", sender: self)
     }
     
  
     @IBAction func MakePayment(_ sender: Any) {
         buttonIndex = (sender as AnyObject).tag
-        print("This buttonIndex for Make payment is: " + String(buttonIndex))
+        /*print("This buttonIndex for Make payment is: " + String(buttonIndex))
         print(currentArray[buttonIndex].VIN)
         print(currentArray[buttonIndex].YrMakeMod)
         print(currentArray[buttonIndex].curpay)
-        print(currentArray[buttonIndex].curtailduenet)
+        print(currentArray[buttonIndex].curtailduenet)*/
 
         if currentArray[buttonIndex].VIN != "No Data Recieved"{
             
